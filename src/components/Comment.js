@@ -73,24 +73,7 @@ const Comment = ({
             </span>
 
             <div style={{ display: "flex", marginTop: "5px" }}>
-              {editMode ? (
-                <>
-                  <Action
-                    className="reply"
-                    type="SAVE"
-                    handleClick={onAddComment}
-                  />
-                  <Action
-                    className="reply"
-                    type="CANCEL"
-                    handleClick={() => {
-                      if (inputRef.current)
-                        inputRef.current.innerText = comment.name;
-                      setEditMode(false);
-                    }}
-                  />
-                </>
-              ) : (
+              {!editMode && (
                 <>
                   <Action
                     className="reply"
@@ -105,13 +88,6 @@ const Comment = ({
                       </>
                     }
                     handleClick={handleNewComment}
-                  />
-                  <Action
-                    className="reply"
-                    type="EDIT"
-                    handleClick={() => {
-                      setEditMode(true);
-                    }}
                   />
                   <Action
                     className="reply"

@@ -44,7 +44,7 @@ const useNode = () => {
     return tree;
   };
 
-  return { insertNode, editNode, deleteNode };
+  return { insertNode, deleteNode,editNode };
 };
 
 export default useNode;
